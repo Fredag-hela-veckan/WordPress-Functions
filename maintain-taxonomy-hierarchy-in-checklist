@@ -1,0 +1,11 @@
+<?php
+/* Maintain hirarchy of categories in admin                                 */
+/* Works also in Media library                                              */
+/* https://developer.wordpress.org/reference/hooks/wp_terms_checklist_args/ */
+/* Tested with WP 6.1.1                                                     */
+
+function maintain_taxonomy_hierarchy_in_checklist( $args, $post_id = null ) {
+    $args['checked_ontop'] = false;
+    return $args;
+}
+add_action( 'wp_terms_checklist_args', 'maintain_taxonomy_hierarchy_in_checklist' );
